@@ -210,10 +210,38 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 .step p{color:var(--muted);font-size:16px}
 
 /* zoom finale */
-.zoom{height:240vh}
+.zoom{height:135vh}
 .zoom .sticky{justify-content:center;text-align:center}
 .zoom h2{font-size:clamp(38px,8.5vw,128px);font-weight:600;line-height:1;will-change:transform}
 .zoom h2 span{display:block}
+
+
+/* results chart */
+.results{padding-block:clamp(24px,5vw,56px) clamp(90px,12vw,140px)}
+.results .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.results h3{font-size:clamp(26px,3.6vw,42px);line-height:1.1;max-width:16em}
+.chart-card{margin-top:36px;border:1px solid var(--band-line);border-radius:28px;background:var(--band-panel);box-shadow:inset 0 1px 0 rgba(217,182,94,.25);padding:clamp(18px,3vw,36px);display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:clamp(20px,3vw,40px)}
+@media (max-width:860px){.chart-card{grid-template-columns:1fr}}
+.chart-wrap{min-width:0;overflow-x:auto}
+.chart-wrap svg{width:100%;min-width:520px;height:auto;display:block;overflow:visible}
+.chart .grid line{stroke:var(--band-line);stroke-width:1}
+.chart .axis{fill:var(--band-muted);font:500 12px var(--f-mono);font-variant-numeric:tabular-nums}
+.chart .ln{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 2.2s cubic-bezier(.6,.05,.25,1)}
+.chart .ar{transition:opacity 1.2s 1.1s}
+.chart .lbl,.chart .dot,.chart .ring{transition:opacity .6s 2s}
+.chart .lbl{font:600 13px var(--f-body)}
+.chart .lbl.big{font:600 22px var(--f-display)}
+.chart .ring{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(3.2);opacity:0}}
+.chart .cross{transition:opacity .6s 1.6s}
+.chart.pre .ln{stroke-dashoffset:1}
+.chart.pre .ar,.chart.pre .lbl,.chart.pre .dot,.chart.pre .cross{opacity:0}
+.chart.pre .ring{animation:none;opacity:0}
+.stats{display:grid;gap:14px;align-content:start}
+.stat{border-top:1px solid var(--band-line);padding-top:14px}
+.stat b{display:block;font:600 clamp(34px,4vw,46px)/1 var(--f-display);font-variant-numeric:tabular-nums}
+.stat small{display:block;margin-top:6px;font-size:14px;color:var(--band-muted)}
+.chart-note{margin-top:16px;font:400 12px var(--f-mono);color:var(--band-muted);letter-spacing:.04em}
 
 /* contact */
 .contact{padding-block:clamp(90px,12vw,140px)}
@@ -267,7 +295,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <p class="wordmark gold" style="animation:rise .8s .05s both, sheen 7s linear infinite">MARLER ENTERPRISES LLC</p>
     <p class="eyebrow" style="animation:rise .8s .1s both;margin-top:10px">Administrative Services</p>
     <h1 id="heroTitle" style="margin-top:22px"><span class="w">Paperwork,</span><br><span class="w">perfectly</span> <span class="w grad">handled.</span></h1>
-    <p class="sub">Notary, bookkeeping, form preparation and back-office support for small businesses. You run the business. We keep the office running.</p>
+    <p class="sub">Notary, bookkeeping, form preparation and back-office support for small businesses. You run the business. We handle the details.</p>
     <div class="cta">
       <a class="btn gold-btn" href="#contact">Book a consultation</a>
       <a class="btn ghost" href="#services">Explore services ›</a>
@@ -437,6 +465,48 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </section>
 
+<section class="band results" id="results">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow rv">What changes when you work with us</p>
+        <h3 class="rv" style="margin-top:12px">Your week shifts from paperwork to <span class="gold">growth.</span></h3>
+      </div>
+    </div>
+    <div class="chart-card rv">
+      <div class="chart-wrap"><svg class="chart pre" id="chart" viewBox="0 0 760 360" role="img" aria-labelledby="chartTitle">
+<title id="chartTitle">Example: weekly admin hours fall from 16 to 4 over six months while hours back for the business rise from 0 to 12.</title>
+<defs>
+<linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9B65E" stop-opacity=".28"/><stop offset="1" stop-color="#D9B65E" stop-opacity="0"/></linearGradient>
+<linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3FBF86" stop-opacity=".30"/><stop offset="1" stop-color="#3FBF86" stop-opacity="0"/></linearGradient>
+<linearGradient id="sA" x1="0" x2="1"><stop offset="0" stop-color="#8C6A1E"/><stop offset=".5" stop-color="#F5E3A6"/><stop offset="1" stop-color="#D9B65E"/></linearGradient>
+</defs>
+<g class="grid"><line x1="48" x2="610" y1="316.0" y2="316.0"/><line x1="48" x2="610" y1="217.3" y2="217.3"/><line x1="48" x2="610" y1="118.7" y2="118.7"/><line x1="48" x2="610" y1="20.0" y2="20.0"/></g><text class="axis" x="36" y="320.0" text-anchor="end">0</text><text class="axis" x="36" y="221.3" text-anchor="end">6</text><text class="axis" x="36" y="122.7" text-anchor="end">12</text><text class="axis" x="36" y="24.0" text-anchor="end">18</text><text class="axis" x="48.0" y="346" text-anchor="middle">Start</text><text class="axis" x="141.7" y="346" text-anchor="middle">Mo 1</text><text class="axis" x="235.3" y="346" text-anchor="middle">Mo 2</text><text class="axis" x="329.0" y="346" text-anchor="middle">Mo 3</text><text class="axis" x="422.7" y="346" text-anchor="middle">Mo 4</text><text class="axis" x="516.3" y="346" text-anchor="middle">Mo 5</text><text class="axis" x="610.0" y="346" text-anchor="middle">Mo 6</text>
+<text class="axis" x="36" y="4" text-anchor="end" style="font-size:10px" dy="-8">HRS/WK</text>
+<path class="ar" d="M48.0,52.9 C94.8,52.9 94.8,102.2 141.7,102.2 C188.5,102.2 188.5,151.6 235.3,151.6 C282.2,151.6 282.2,192.7 329.0,192.7 C375.8,192.7 375.8,217.3 422.7,217.3 C469.5,217.3 469.5,242.0 516.3,242.0 C563.2,242.0 563.2,250.2 610.0,250.2 L610.0,316 L48,316 Z" fill="url(#gA)"/>
+<path class="ar" d="M48.0,316.0 C94.8,316.0 94.8,266.7 141.7,266.7 C188.5,266.7 188.5,217.3 235.3,217.3 C282.2,217.3 282.2,176.2 329.0,176.2 C375.8,176.2 375.8,151.6 422.7,151.6 C469.5,151.6 469.5,126.9 516.3,126.9 C563.2,126.9 563.2,118.7 610.0,118.7 L610.0,316 L48,316 Z" fill="url(#gB)"/>
+<g class="cross"><line x1="263.4" x2="263.4" y1="20" y2="316" stroke="#D9B65E" stroke-opacity=".35" stroke-dasharray="3 5"/>
+<text class="axis" x="271.4" y="32" fill="#D9B65E" style="fill:#D9B65E">The switch</text></g>
+<path class="ln" pathLength="1" d="M48.0,52.9 C94.8,52.9 94.8,102.2 141.7,102.2 C188.5,102.2 188.5,151.6 235.3,151.6 C282.2,151.6 282.2,192.7 329.0,192.7 C375.8,192.7 375.8,217.3 422.7,217.3 C469.5,217.3 469.5,242.0 516.3,242.0 C563.2,242.0 563.2,250.2 610.0,250.2" stroke="url(#sA)"/>
+<path class="ln" pathLength="1" d="M48.0,316.0 C94.8,316.0 94.8,266.7 141.7,266.7 C188.5,266.7 188.5,217.3 235.3,217.3 C282.2,217.3 282.2,176.2 329.0,176.2 C375.8,176.2 375.8,151.6 422.7,151.6 C469.5,151.6 469.5,126.9 516.3,126.9 C563.2,126.9 563.2,118.7 610.0,118.7" stroke="#3FBF86" style="transition-delay:.25s"/>
+<circle class="ring" cx="610.0" cy="118.7" r="6" fill="none" stroke="#3FBF86" stroke-width="2"/>
+<circle class="dot" cx="610.0" cy="118.7" r="6" fill="#3FBF86"/>
+<circle class="dot" cx="610.0" cy="250.2" r="6" fill="#D9B65E"/>
+<text class="lbl big" x="626.0" y="114.7" fill="#3FBF86">12 hrs</text>
+<text class="lbl" x="626.0" y="134.7" fill="#F1EDE0">back for growth</text>
+<text class="lbl big" x="626.0" y="246.2" fill="#D9B65E">4 hrs</text>
+<text class="lbl" x="626.0" y="266.2" fill="#F1EDE0">on admin</text>
+</svg></div>
+      <div class="stats">
+        <div class="stat"><b class="gold"><span data-count="75">0</span>%</b><small>less time on paperwork</small></div>
+        <div class="stat"><b style="color:#3FBF86"><span data-count="12">0</span> hrs</b><small>back every week</small></div>
+        <div class="stat"><b><span data-count="100">0</span>%</b><small>of filings submitted on time</small></div>
+      </div>
+    </div>
+    <p class="chart-note"></p>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="wrap cols">
     <div class="rv">
@@ -534,6 +604,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   layoutReel();
   addEventListener('resize', () => { layoutReel(); tick(); });
 
+
+  // chart + counters
+  const chart = $('#chart'), counters = [...document.querySelectorAll('[data-count]')];
+  const runCount = el => { const to=+el.dataset.count; if (reduce) { el.textContent=to; return; } const t0=performance.now(), d=1800;
+    const step=t=>{ const p=Math.min(1,(t-t0)/d), e=1-Math.pow(1-p,3); el.textContent=Math.round(to*e); if(p<1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
+  if (reduce || !('IntersectionObserver' in window)) { chart.classList.remove('pre'); counters.forEach(c=>c.textContent=c.dataset.count); }
+  else {
+    const cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { chart.classList.remove('pre'); counters.forEach(runCount); cio.disconnect(); } }), {threshold:.35});
+    cio.observe(chart);
+  }
+
   // form
   $('#contactForm').addEventListener('submit', e => {
     e.preventDefault();
@@ -589,9 +670,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
     // zoom
     const zp = sceneP(zoomSec);
-    const s = zp < .5 ? .55 + zp*.9 : 1 + (zp-.5)*1.4;
+    const s = .7 + .45*clamp(zp/.6,0,1);
     zoomText.style.transform = `scale(${s})`;
-    zoomText.style.opacity = zp < .5 ? clamp(.15 + zp*2, 0, 1) : clamp(1 - (zp-.75)*4, 0, 1);
+    zoomText.style.opacity = clamp(.3 + zp*2.5, 0, 1);
   }
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(tick); } }, {passive:true});
   tick();
