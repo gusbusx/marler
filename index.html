@@ -188,6 +188,20 @@ nav.top.scrolled .wrap{box-shadow:0 22px 50px -20px rgba(15,31,24,.6),inset 0 1p
 .panel.on .ledger .r:nth-child(3){transition-delay:.1s}.panel.on .ledger .r:nth-child(4){transition-delay:.2s}.panel.on .ledger .r:nth-child(5){transition-delay:.3s}
 .panel.on .ledger .pill{opacity:1;transform:none}
 
+/* art: rent roll */
+.rentroll{width:100%;max-width:340px;background:#061A11;border:1px solid var(--band-line);border-radius:16px;padding:18px;font:400 13px var(--f-mono);color:var(--band-muted)}
+.rr-h{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid var(--band-line)}
+.rr-r{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--band-line)}
+.rr-r .u{color:var(--band-fg)}
+.rr-r .bar{height:6px;border-radius:3px;background:#0F3324;overflow:hidden}
+.rr-r .bar i{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#B08A2E,#F5E3A6);transition:width .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*180ms)}
+.rr-r .st{font-size:11px;padding:3px 9px;border-radius:99px;background:rgba(255,255,255,.05);color:var(--band-muted);transition:all .4s;transition-delay:calc(var(--i)*180ms + 700ms)}
+.panel.on .rr-r .bar i{width:var(--w)}
+.panel.on .rr-r .st{background:rgba(20,160,107,.18);color:#7BE0AE}
+.rr-f{display:flex;justify-content:space-between;align-items:center;padding-top:12px;color:var(--band-fg)}
+.pill2{font-size:11px;padding:3px 10px;border-radius:99px;background:rgba(20,160,107,.15);color:#7BE0AE;opacity:0;transform:scale(.8);transition:all .5s 1.6s cubic-bezier(.3,1.6,.5,1)}
+.panel.on .pill2{opacity:1;transform:none}
+
 /* art: form */
 .form-art{width:100%;max-width:320px;background:#F4F2EA;border-top:4px solid #C9A24A;color:#0B0D14;border-radius:14px;padding:20px;display:grid;gap:12px;transform:rotate(-3deg);box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
 .form-art .fh{font:600 10px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#5A6072;display:flex;justify-content:space-between}
@@ -290,7 +304,8 @@ nav.top.scrolled .wrap{box-shadow:0 22px 50px -20px rgba(15,31,24,.6),inset 0 1p
 .v-ic{font:500 12px var(--f-mono);letter-spacing:.14em;color:var(--gold)}
 .value h3{font-size:20px;font-weight:600}
 .value p{color:var(--muted);font-size:15px}
-.facts{margin:28px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts{margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr 1.6fr .8fr 1.2fr;gap:0 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media (max-width:1000px){.facts{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:760px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .facts div{padding:18px 4px}
 .facts dt{font:500 11px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
@@ -436,7 +451,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
     <p class="wordmark gold" style="animation:rise .8s .05s both, sheen 7s linear infinite">MARLER ENTERPRISES LLC</p>
     <p class="eyebrow" style="animation:rise .8s .1s both;margin-top:10px">Administrative Services</p>
     <h1 id="heroTitle" style="margin-top:22px"><span class="w">Paperwork,</span><br><span class="w">perfectly</span> <span class="w grad">handled.</span></h1>
-    <p class="sub">Bookkeeping, notary, form preparation and back-office support for small businesses. You run the business. We handle the details.</p>
+    <p class="sub">Bookkeeping for small businesses and the real estate industry, plus notary, form preparation and back-office support. You run the business. We handle the details.</p>
     <div class="cta">
       <a class="btn gold-btn" href="#contact">Book a consultation</a>
       <a class="btn ghost" href="#services">Explore services ›</a>
@@ -470,8 +485,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
   </div>
   <div class="marquee" aria-hidden="true">
     <div class="track">
-      <span>Bookkeeping</span><span>Notary public</span><span>Form preparation</span><span>Office management</span><span>Clerical support</span><span>Back-office assistance</span>
-      <span>Bookkeeping</span><span>Notary public</span><span>Form preparation</span><span>Office management</span><span>Clerical support</span><span>Back-office assistance</span>
+      <span>Bookkeeping</span><span>Real estate bookkeeping</span><span>Notary public</span><span>Form preparation</span><span>Office management</span><span>Clerical support</span><span>Back-office assistance</span>
+      <span>Bookkeeping</span><span>Real estate bookkeeping</span><span>Notary public</span><span>Form preparation</span><span>Office management</span><span>Clerical support</span><span>Back-office assistance</span>
     </div>
   </div>
 </header>
@@ -491,7 +506,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
       </div>
       <span class="badge f1"><i>✦</i>Bookkeeping</span>
       <span class="badge f2"><i>★</i>Notary Public</span>
-      <span class="badge f3"><i>✓</i>5 services, one team</span>
+      <span class="badge f3"><i>✓</i>25+ years in real estate</span>
       <span class="badge f4"><i>◆</i>Small-business focused</span>
     </div>
     </div>
@@ -510,6 +525,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
       </div>
       <div class="about-copy rv">
         <p>Marler Enterprises LLC is an administrative services company built for small businesses. Bookkeeping is at the heart of what we do, with notary services, form preparation and day-to-day office support alongside it.</p>
+        <p>Our team brings more than 25 years of experience in property management and real estate, so we also offer specialized bookkeeping for the real estate industry: rent rolls, tenant ledgers, security deposits and vendor payments.</p>
         <p>We keep the books balanced, the paperwork filed and the office running, so owners can spend their time on the work they started the business to do.</p>
       </div>
     </div>
@@ -522,6 +538,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
     <dl class="facts rv">
       <div><dt>Company</dt><dd>Marler Enterprises LLC</dd></div>
       <div><dt>Focus</dt><dd>Small businesses</dd></div>
+      <div><dt>Experience</dt><dd>25+ years in property management &amp; real estate</dd></div>
       <div><dt>Founded</dt><dd>2020</dd></div>
       <div><dt>Based in</dt><dd>Roselle, New Jersey</dd></div>
     </dl>
@@ -549,7 +566,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 <div class="band" id="services">
   <div class="wrap reel-head">
     <p class="eyebrow rv">What we do</p>
-    <h2 class="rv" style="margin-top:14px">Five services.<br>One less thing to worry about.</h2>
+    <h2 class="rv" style="margin-top:14px">Six services.<br>One less thing to worry about.</h2>
     <p class="muted rv">Pick one or bundle them. Every service is handled by the same team, so your records, forms and schedule stay in sync.</p>
   </div>
 
@@ -572,6 +589,24 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
               <div class="r"><span>Payroll</span><span>2,140.00</span><span></span></div>
               <div class="r"><span>Supplies</span><span>310.00</span><span></span></div>
               <div class="tot"><span>Reconciled</span><span class="pill">✓ Balanced</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="panel" data-panel>
+          <div class="copy">
+            <span class="tag">Real estate bookkeeping</span>
+            <h3>Books built for property.</h3>
+            <p>Specialized bookkeeping for landlords, property managers and real estate businesses, backed by more than 25 years in property management and real estate.</p>
+            <ul><li>Rent rolls and tenant ledgers</li><li>Security deposit tracking</li><li>Vendor payments and 1099 prep</li><li>Property-by-property reporting</li></ul>
+          </div>
+          <div class="art">
+            <div class="rentroll" aria-hidden="true">
+              <div class="rr-h"><span>Rent roll</span><span>This month</span></div>
+              <div class="rr-r" style="--i:0"><span class="u">Unit 1A</span><span class="bar"><i style="--w:100%"></i></span><span class="st">Paid</span></div>
+              <div class="rr-r" style="--i:1"><span class="u">Unit 1B</span><span class="bar"><i style="--w:100%"></i></span><span class="st">Paid</span></div>
+              <div class="rr-r" style="--i:2"><span class="u">Unit 2A</span><span class="bar"><i style="--w:100%"></i></span><span class="st">Paid</span></div>
+              <div class="rr-r" style="--i:3"><span class="u">Unit 2B</span><span class="bar"><i style="--w:100%"></i></span><span class="st">Paid</span></div>
+              <div class="rr-f"><span>Deposits held</span><span class="pill2">✓ Reconciled</span></div>
             </div>
           </div>
         </article>
@@ -669,7 +704,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
       <h2 style="margin-top:14px">Let's lighten your desk.</h2>
       <p class="lead">Tell us what you need help with and we'll get back to you to set up a time to talk.</p>
       <ul>
-        <li><b>Services</b>Bookkeeping · Notary · Forms · Office · Back office</li>
+        <li><b>Services</b>Bookkeeping · Real estate bookkeeping · Notary · Forms · Office · Back office</li>
         <li><b>Clients</b>Small businesses and individuals</li>
         <li><b>Company</b>Marler Enterprises LLC</li>
         <li><b>Location</b>Roselle, New Jersey</li>
@@ -690,7 +725,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
         <div class="fg"><label for="f-email">Email</label><input id="f-email" type="email" required placeholder="you@business.com"></div>
       </div>
       <div class="fg"><label for="f-service">Service</label>
-        <select id="f-service"><option>Bookkeeping</option><option>Notary</option><option>Form preparation</option><option>Office management &amp; clerical</option><option>Back-office assistance</option><option>Not sure yet</option></select>
+        <select id="f-service"><option>Bookkeeping</option><option>Real estate bookkeeping</option><option>Notary</option><option>Form preparation</option><option>Office management &amp; clerical</option><option>Back-office assistance</option><option>Not sure yet</option></select>
       </div>
       <div class="fg"><label for="f-msg">How can we help?</label><textarea id="f-msg" rows="4" placeholder="A few words about your business and what you need."></textarea></div>
       <input type="text" name="_honey" id="f-hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
@@ -713,7 +748,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
       <div class="legend"><span class="lg-gold">Time for growth</span><span class="lg-dash">Paperwork on your desk</span></div>
       <canvas id="growthCanvas" aria-hidden="true"></canvas>
     </div>
-    <div class="growth-pills rv"><span>Bookkeeping</span><span>Notary</span><span>Form preparation</span><span>Office management</span><span>Back-office support</span></div>
+    <div class="growth-pills rv"><span>Bookkeeping</span><span>Real estate bookkeeping</span><span>Notary</span><span>Form preparation</span><span>Office management</span><span>Back-office support</span></div>
   </div>
 </section>
 
@@ -761,7 +796,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
   <div class="wrap foot">
     <div class="foot-l">
       <span>© 2026 Marler Enterprises LLC. All rights reserved. <button class="link-btn" type="button" data-open-privacy>Privacy Policy</button></span>
-      <span>Roselle, New Jersey · Est. 2020 · Bookkeeping · Notary · Form preparation · Office &amp; back-office support</span>
+      <span>Roselle, New Jersey · Est. 2020 · Bookkeeping · Real estate bookkeeping · Notary · Form preparation · Office &amp; back-office support</span>
       <p class="disclaimer">Marler Enterprises LLC is not a law firm. Notaries public in New Jersey are not attorneys and may not give legal advice or accept fees for legal advice. We prepare forms based on the information you provide and do not provide legal or tax advice.</p>
     </div>
     <div class="credit">
@@ -912,7 +947,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
   if (reduce || !('IntersectionObserver' in window)) certRow.classList.remove('pre');
   else { const crIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { certRow.classList.remove('pre'); crIO.disconnect(); } }), {threshold:.25}); crIO.observe(certRow); }
 
-  // form -> email via FormSubmit (https://formsubmit.co)
+  // form → email via FormSubmit (https://formsubmit.co)
   const FORM_TO = 'marlerenterprisesllc@hotmail.com';
   const form = $('#contactForm'), sendBtn = $('#sendBtn');
   form.addEventListener('submit', async e => {
@@ -939,12 +974,21 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
         })
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || data.success === 'false' || data.success === false) throw new Error(data.message || 'send failed');
+      if (!res.ok || data.success === 'false' || data.success === false) {
+        const m = String(data.message || '');
+        note.hidden = false;
+        if (/activat/i.test(m)) { note.style.color = 'var(--gold)'; note.textContent = 'Almost there: this form needs a one-time activation. Check the inbox for an email from FormSubmit and click "Activate Form", then send again.'; }
+        else if (/web server|file:/i.test(m)) { note.style.color = '#E5484D'; note.textContent = 'This page has to be opened through a web server (for example Live Server in VS Code), not by double-clicking the file.'; }
+        else { note.style.color = '#E5484D'; note.textContent = "We couldn't send your request" + (m ? ': ' + m : '. Please try again.'); }
+        return;
+      }
       form.reset();
       showSent(name.split(' ')[0]);
     } catch (err) {
       note.hidden = false; note.style.color = '#E5484D';
-      note.textContent = "We couldn't send your request. Check your connection and try again.";
+      note.textContent = location.protocol === 'file:'
+        ? 'This page has to be opened through a web server (for example Live Server in VS Code), not by double-clicking the file.'
+        : "We couldn't reach the email service. Check your connection and try again.";
     } finally {
       sendBtn.disabled = false; sendBtn.textContent = 'Send request';
     }
