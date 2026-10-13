@@ -522,7 +522,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
     <dl class="facts rv">
       <div><dt>Company</dt><dd>Marler Enterprises LLC</dd></div>
       <div><dt>Focus</dt><dd>Small businesses</dd></div>
-      <div><dt>Founded</dt><dd>2022</dd></div>
+      <div><dt>Founded</dt><dd>2020</dd></div>
       <div><dt>Based in</dt><dd>Roselle, New Jersey</dd></div>
     </dl>
     <div class="certs">
@@ -761,7 +761,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
   <div class="wrap foot">
     <div class="foot-l">
       <span>© 2026 Marler Enterprises LLC. All rights reserved. <button class="link-btn" type="button" data-open-privacy>Privacy Policy</button></span>
-      <span>Roselle, New Jersey · Est. 2022 · Bookkeeping · Notary · Form preparation · Office &amp; back-office support</span>
+      <span>Roselle, New Jersey · Est. 2020 · Bookkeeping · Notary · Form preparation · Office &amp; back-office support</span>
       <p class="disclaimer">Marler Enterprises LLC is not a law firm. Notaries public in New Jersey are not attorneys and may not give legal advice or accept fees for legal advice. We prepare forms based on the information you provide and do not provide legal or tax advice.</p>
     </div>
     <div class="credit">
@@ -912,8 +912,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
   if (reduce || !('IntersectionObserver' in window)) certRow.classList.remove('pre');
   else { const crIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { certRow.classList.remove('pre'); crIO.disconnect(); } }), {threshold:.25}); crIO.observe(certRow); }
 
-  // form → email via FormSubmit (https://formsubmit.co)
-  const FORM_TO = 'ginxlicoln@gmail.com';
+  // form -> email via FormSubmit (https://formsubmit.co)
+  const FORM_TO = 'marlerenterprisesllc@hotmail.com';
   const form = $('#contactForm'), sendBtn = $('#sendBtn');
   form.addEventListener('submit', async e => {
     e.preventDefault();
